@@ -1,6 +1,6 @@
 <script>
     import IndiServices from "../mini-components/IndiServices.svelte"
-	import ServiceData from "../store/services";
+	export let services;
 </script>
 <main>
     <section id="services">
@@ -20,7 +20,7 @@
 
    	<div  class="row services-content">
    		<div id="owl-slider"  class="owl-carousel services-list">
-			{#each ServiceData as service }
+			{#each services as service }
 			<IndiServices icon={service.icon} title={service.title} desc={service.desc}/>
 			{/each}
 	      </div>

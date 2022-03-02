@@ -1,8 +1,8 @@
 <script>
     import WorkModal from '../mini-components/WorkModal.svelte'
-	import WorkData from '../store/workdata.js'
-    import ModalsData from '../store/modals.js'
     import Modals from '../mini-components/Modals.svelte'
+	export let modals;
+	export let works;
 </script>
 <main>
     <section id="portfolio">
@@ -21,10 +21,10 @@
 
    		<div class="col-twelve">
 	         <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
-				 {#each WorkData as work }
+				 {#each works as work }
 				<WorkModal img={work.img} modalNum={work.modalNum} title={work.title} alt={work.alt} desc={work.desc} />
 				 {/each} 
-				 {#each ModalsData as modal}
+				 {#each modals as modal}
 				 <Modals  img={modal.img} modalNum={modal.modalNum} title={modal.title} alt={modal.alt} category={modal.category} desc={modal.desc}/>
 				 {/each}
 	         </div>

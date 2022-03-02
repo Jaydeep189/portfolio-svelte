@@ -1,6 +1,6 @@
 <script>
     import Skills from "../mini-components/Skills.svelte";
-    import SkillsData from '../store/data.js'
+    export let skills;
 </script>
 <main>
     <section id="about">  
@@ -66,7 +66,7 @@
         I am also a creative writer and running two blogs which you can find here.</p>
         
                  <ul class="skill-bars">
-                    {#each SkillsData as Skill }
+                    {#each skills as Skill }
                      <Skills name={Skill.name} percent={Skill.percent} />
                      {/each} 
                  </ul>
