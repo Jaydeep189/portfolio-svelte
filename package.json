@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "fs": "0.0.1-security",
+    "node-fetch": "^3.2.1",
     "require": "^2.4.20",
     "sirv-cli": "^2.0.0"
   }
