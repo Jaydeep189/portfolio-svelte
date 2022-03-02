@@ -6,6 +6,13 @@
     import Services from "../components/Services.svelte";
     import Stats from "../components/Stats.svelte"
     import {ServiceData, SkillsData, WorkData, ModalsData} from '../store/data.js'
+    import { onMount } from 'svelte';
+    let data;
+    onMount(async () => {
+		const res = await fetch(`https://myportfolio-svelte.netlify.app/.netlify/functions/data`);
+		data = await res.json();
+        console.log(data);
+	});
 </script>
 
 <main>
