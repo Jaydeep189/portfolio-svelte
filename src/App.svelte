@@ -1,11 +1,12 @@
 <script>
 	import Header from "./Header/Header.svelte";
 	import Footer from "./Footer/Footer.svelte";
-	import Body from './Body/Body.svelte'
+	import Body from './Body/Body.svelte';
 	const initializeRemarkable = () => {
 		md = new window.remarkable.Remarkable();
 	}
-	const mssg = process.env.TEST ? 'This is production mode' : 'Adaad';
+	import {env} from '../env'
+	const secret = env.TEST
 </script>
 
 <svelte:head>
@@ -16,7 +17,7 @@
 
 <main>
 	<Header />
-	<h1>{mssg}</h1>
+	<h1>{secret}</h1>
 	<Body />
 	<Footer />
 </main>
