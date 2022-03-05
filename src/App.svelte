@@ -5,6 +5,7 @@
 	const initializeRemarkable = () => {
 		md = new window.remarkable.Remarkable();
 	}
+	const mssg = process.env.isProd ? 'This is production mode' : FOO;
 </script>
 
 <svelte:head>
@@ -15,6 +16,7 @@
 
 <main>
 	<Header />
+	<h1>{mssg}</h1>
 	<Body />
 	<Footer />
 </main>
